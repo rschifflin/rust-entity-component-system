@@ -1,0 +1,13 @@
+[package]
+
+name = "entity-component-system"
+version = "0.0.1"
+authors = ["Mark Schifflin <rschifflin@hotmail.com>"]
+
+[dependencies.uuid]
+
+git = "https://github.com/rust-lang/uuid.git"
+
+[dependencies.pubsub]
+
+path = "./pubsub"

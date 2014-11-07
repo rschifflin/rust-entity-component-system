@@ -1,0 +1,17 @@
+[root]
+name = "entity-component-system"
+version = "0.0.1"
+dependencies = [
+ "pubsub 0.0.1",
+ "uuid 0.0.1 (git+https://github.com/rust-lang/uuid.git)",
+]
+
+[[package]]
+name = "pubsub"
+version = "0.0.1"
+
+[[package]]
+name = "uuid"
+version = "0.0.1"
+source = "git+https://github.com/rust-lang/uuid.git#c6159089a491ff4398c6d423263a085c95092a04"
+
