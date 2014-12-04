@@ -1,21 +1,21 @@
 #[deriving(Show, Clone)]
-enum Color {
+enum EColor {
   Red,
   Green,
   Blue
 }
 
 #[deriving(Show, Clone)]
-pub struct ColorComponent {
+pub struct Color {
   eid: String,
-  color: Color
+  color: EColor
 }
 
-impl ColorComponent {
-  pub fn red(eid: String) -> ColorComponent {
-    ColorComponent {
+impl Color {
+  pub fn red(eid: String) -> Color {
+    Color {
       eid: eid,
-      color: Red
+      color: EColor::Red
     }
   }
 

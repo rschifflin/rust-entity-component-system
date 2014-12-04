@@ -1,13 +1,8 @@
 [package]
 
-name = "entity-component-system"
+name = "test"
 version = "0.0.1"
 authors = ["Mark Schifflin <rschifflin@hotmail.com>"]
 
-[dependencies.pubsub]
-
-path = "./pubsub"
-
 [dependencies.component_store]
-
-path = "./component_store"
+path = "../"

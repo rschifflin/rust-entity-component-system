@@ -1,20 +1,22 @@
 use pubsub::Pubsub;
 use pubsub::Event;
-use component_store::ComponentStore;
-use components::color_component::ColorComponent;
+use components::color_component::Color;
+use ECS;
 
 pub struct ColorSystem;
 
 impl ColorSystem {
-  pub fn subscribe(pubsub: &mut Pubsub<ComponentStore, String>) {
+  pub fn subscribe(pubsub: &mut Pubsub<ECS, String>) {
     pubsub.subscribe("component_color".to_string(), ColorSystem::add_listener);
   }
 
-  fn add_listener(cs: &mut ComponentStore, payload: String) -> Vec<Event<String>> {
-    cs.add_color_component(ColorComponent::red(payload));
-    Vec::from_elem(1, Event {
-      channel: "log".to_string(),
-      payload: "Added color component!".to_string()
-    })
+  fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String>> {
+    ecs.colors.update_color(payload.clone().as_slice(), Color::red(payload));
+    vec![
+      Event {
+        channel: "log".to_string(),
+        payload: "Added color component!".to_string()
+      }
+    ]
   }
 }

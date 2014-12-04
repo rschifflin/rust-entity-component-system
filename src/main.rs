@@ -1,19 +1,25 @@
-extern crate uuid;
+#![feature(phase)]
+#[phase(plugin)]
+extern crate component_store;
+
 extern crate pubsub;
 
 use pubsub::Pubsub;
 use pubsub::Event;
 
 use entity::Entity;
-use component_store::ComponentStore;
 
 use systems::color_system::ColorSystem;
 use systems::quantity_system::QuantitySystem;
 use systems::logging_system::LoggingSystem;
 use systems::drawing_system::DrawingSystem;
 
+use components::color_component::Color;
+use components::quantity_component::Quantity;
+
+use std::collections::HashMap;
+
 pub mod entity;
-pub mod component_store;
 
 pub mod systems {
   pub mod color_system;
@@ -28,10 +34,15 @@ pub mod components {
   pub mod quantity_component;
 }
 
-fn main() {
-  let mut components = ComponentStore::new();
-  let mut pubsub: Pubsub<ComponentStore, String> = Pubsub::new(&mut components);
+component_store!{
+  components:
+    Quantity/Quantities
+    Color
+}
 
+fn main() {
+  let mut ecs = ECS::new();
+  let mut pubsub: Pubsub<ECS, String> = Pubsub::new(&mut ecs);
   ColorSystem::subscribe(&mut pubsub);
   QuantitySystem::subscribe(&mut pubsub);
   LoggingSystem::subscribe(&mut pubsub);
@@ -41,7 +52,7 @@ fn main() {
 
   pubsub.publish(
     Event {
-      channel: "component_color".to_string(),
+      channel: "components".to_string(),
       payload: e.get_id()
     }
   );
@@ -49,6 +60,13 @@ fn main() {
   pubsub.publish(
     Event {
       channel: "component_quantity".to_string(),
+      payload: e.get_id()
+    }
+  );
+
+  pubsub.publish(
+    Event {
+      channel: "component_color".to_string(),
       payload: e.get_id()
     }
   );

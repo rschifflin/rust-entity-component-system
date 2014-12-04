@@ -1,4 +1,4 @@
-use uuid::Uuid;
+use std::rand;
 
 #[deriving(Show)]
 pub struct Entity {
@@ -7,7 +7,7 @@ pub struct Entity {
 
 impl Entity {
   pub fn new() -> Entity {
-    Entity { id: Uuid::new_v4().to_string() }
+    Entity { id: rand::random::<uint>().to_string() }
   }
 
   pub fn get_id(&self) -> String {

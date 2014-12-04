@@ -1,16 +1,16 @@
 use pubsub::Pubsub;
 use pubsub::Event;
-use component_store::ComponentStore;
+use ECS;
 
 pub struct LoggingSystem;
 
 impl LoggingSystem {
-  pub fn subscribe(pubsub: &mut Pubsub<ComponentStore, String>) {
+  pub fn subscribe(pubsub: &mut Pubsub<ECS, String>) {
     pubsub.subscribe("log".to_string(), LoggingSystem::add_listener);
   }
 
   #[allow(unused_variables)]
-  fn add_listener(cs: &mut ComponentStore, payload: String) -> Vec<Event<String>> {
+  fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String>> {
     println!("Logging: {}", payload);
     Vec::new()
   }
