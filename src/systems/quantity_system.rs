@@ -12,6 +12,7 @@ impl QuantitySystem {
 
   fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String>> {
     ecs.quantities.update_quantity(payload.clone().as_slice(), Quantity::new(payload, 4));
+    println!("Quantities: {}", ecs.quantities)
     Vec::from_elem(1, Event {
       channel: "log".to_string(),
       payload: "Added quantity component!".to_string()

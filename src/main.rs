@@ -47,6 +47,13 @@ fn main() {
 
   pubsub.publish(
     Event {
+      channel: "component_color".to_string(),
+      payload: "123-ABC".to_string()
+    }
+  );
+
+  pubsub.publish(
+    Event {
       channel: "component_quantity".to_string(),
       payload: "123-ABC".to_string()
     }

@@ -12,6 +12,7 @@ impl ColorSystem {
 
   fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String>> {
     ecs.colors.update_color(payload.clone().as_slice(), Color::red(payload));
+    println!("Colors: {}", ecs.colors)
     vec![
       Event {
         channel: "log".to_string(),
