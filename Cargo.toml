@@ -6,8 +6,8 @@ authors = ["Mark Schifflin <rschifflin@hotmail.com>"]
 
 [dependencies.pubsub]
 
-path = "./pubsub"
+git = "https://github.com/rschifflin/rust-pubsub"
 
 [dependencies.component_store]
 
-path = "./component_store"
+git = "https://github.com/rschifflin/rust-component-store"
