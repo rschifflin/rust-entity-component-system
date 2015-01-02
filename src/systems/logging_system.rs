@@ -2,6 +2,7 @@ use pubsub::Pubsub;
 use pubsub::Event;
 use ECS;
 
+#[deriving(Copy)]
 pub struct LoggingSystem;
 
 impl LoggingSystem {

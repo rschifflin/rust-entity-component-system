@@ -1,12 +1,12 @@
 #[deriving(Show, Clone)]
-pub struct Quantity {
+pub struct QuantityComponent {
   eid: String,
   quantity: int
 }
 
-impl Quantity {
-  pub fn new(eid: String, n: int) -> Quantity {
-    Quantity {
+impl QuantityComponent {
+  pub fn new(eid: String, n: int) -> QuantityComponent {
+    QuantityComponent {
       eid: eid,
       quantity: n
     }

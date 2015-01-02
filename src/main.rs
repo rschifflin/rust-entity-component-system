@@ -12,8 +12,8 @@ use systems::quantity_system::QuantitySystem;
 use systems::logging_system::LoggingSystem;
 use systems::drawing_system::DrawingSystem;
 
-use components::color_component::Color;
-use components::quantity_component::Quantity;
+use components::color_component::ColorComponent;
+use components::quantity_component::QuantityComponent;
 
 use std::collections::HashMap;
 
