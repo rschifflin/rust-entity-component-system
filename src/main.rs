@@ -1,7 +1,6 @@
 #![feature(phase)]
 #[phase(plugin)]
 extern crate component_store;
-
 extern crate pubsub;
 
 use pubsub::Pubsub;
@@ -38,7 +37,7 @@ component_store!{
 
 fn main() {
   let mut ecs = ECS::new();
-  let mut pubsub: Pubsub<ECS, String> = Pubsub::new(&mut ecs);
+  let mut pubsub: Pubsub<ECS, String, String> = Pubsub::new(&mut ecs);
 
   ColorSystem::subscribe(&mut pubsub);
   QuantitySystem::subscribe(&mut pubsub);
@@ -54,8 +53,8 @@ fn main() {
 
   pubsub.publish(
     Event {
-      channel: "component_quantity".to_string(),
-      payload: "456-XYZ".to_string()
+      channel: "component_color".to_string(),
+      payload: "123-ABC".to_string()
     }
   );
 

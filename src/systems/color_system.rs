@@ -7,11 +7,11 @@ use ECS;
 pub struct ColorSystem;
 
 impl ColorSystem {
-  pub fn subscribe(pubsub: &mut Pubsub<ECS, String>) {
+  pub fn subscribe(pubsub: &mut Pubsub<ECS, String, String>) {
     pubsub.subscribe("component_color".to_string(), ColorSystem::add_listener);
   }
 
-  fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String>> {
+  fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String, String>> {
     ecs.colors.update_color(payload.clone(), ColorComponent::red(payload));
     vec![
       Event {

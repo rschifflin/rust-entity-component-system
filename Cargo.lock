@@ -14,5 +14,5 @@ source = "git+https://github.com/rschifflin/rust-component-store#850dcb928e51fb2
 [[package]]
 name = "pubsub"
 version = "0.0.1"
-source = "git+https://github.com/rschifflin/rust-pubsub#309a5ccbd6feb8736cef52f180121f24ae35246d"
+source = "git+https://github.com/rschifflin/rust-pubsub#a92c6b97601a4cab436111deec0c909a7301ef1a"
 
