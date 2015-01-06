@@ -2,7 +2,7 @@ use pubsub::Pubsub;
 use pubsub::Event;
 use ECS;
 
-#[deriving(Copy)]
+#[derive(Copy)]
 pub struct DrawingSystem;
 
 impl DrawingSystem {

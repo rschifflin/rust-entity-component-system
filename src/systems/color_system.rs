@@ -3,7 +3,7 @@ use pubsub::Event;
 use components::color_component::ColorComponent;
 use ECS;
 
-#[deriving(Copy)]
+#[derive(Copy)]
 pub struct ColorSystem;
 
 impl ColorSystem {

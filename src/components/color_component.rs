@@ -1,11 +1,11 @@
-#[deriving(Show, Clone)]
+#[derive(Show, Clone)]
 enum Color {
   Red,
   Green,
   Blue
 }
 
-#[deriving(Show, Clone)]
+#[derive(Show, Clone)]
 pub struct ColorComponent {
   eid: String,
   color: Color

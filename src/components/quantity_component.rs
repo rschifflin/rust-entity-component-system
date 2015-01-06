@@ -1,4 +1,4 @@
-#[deriving(Show, Clone)]
+#[derive(Show, Clone)]
 pub struct QuantityComponent {
   eid: String,
   quantity: int

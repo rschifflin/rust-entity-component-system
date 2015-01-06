@@ -1,4 +1,4 @@
-#[deriving(Show, Rand)]
+#[derive(Show, Rand)]
 pub struct Entity {
   pub id: String
 }

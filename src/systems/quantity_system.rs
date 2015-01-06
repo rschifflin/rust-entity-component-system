@@ -3,7 +3,7 @@ use pubsub::Event;
 use components::quantity_component::QuantityComponent;
 use ECS;
 
-#[deriving(Copy)]
+#[derive(Copy)]
 pub struct QuantitySystem;
 
 impl QuantitySystem {
