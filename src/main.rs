@@ -1,6 +1,6 @@
-#![feature(phase)]
-#[phase(plugin)]
-extern crate component_store;
+#![feature(plugin)]
+#![plugin(component_store)]
+
 extern crate pubsub;
 
 use pubsub::Pubsub;

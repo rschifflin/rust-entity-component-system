@@ -9,10 +9,10 @@ dependencies = [
 [[package]]
 name = "component_store"
 version = "0.0.1"
-source = "git+https://github.com/rschifflin/rust-component-store#c3395cd15b64ba8d98e9d57369a4183da1b8589c"
+source = "git+https://github.com/rschifflin/rust-component-store#9143bc9a0880d6dfeaae335512253fd60d255d70"
 
 [[package]]
 name = "pubsub"
 version = "0.0.1"
-source = "git+https://github.com/rschifflin/rust-pubsub#fd140d4dd77f083df12af8ba802700a0de199721"
+source = "git+https://github.com/rschifflin/rust-pubsub#b07e4f397f298b5bfc7e977b2a18db0a64d010e1"
 

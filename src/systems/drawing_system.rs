@@ -13,7 +13,7 @@ impl DrawingSystem {
   fn add_listener(ecs: &mut ECS, payload: String) -> Vec<Event<String, String>> {
     let color = ecs.colors.find_color(&payload);
     let quantity = ecs.quantities.find_quantity(&payload);
-    println!("Drawing with Color {} and Quantity {}", color, quantity);
+    println!("Drawing with Color {:?} and Quantity {:?}", color, quantity);
     Vec::new()
   }
 }

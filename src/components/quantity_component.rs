@@ -1,11 +1,11 @@
-#[derive(Show, Clone)]
+#[derive(Debug, Clone)]
 pub struct QuantityComponent {
   eid: String,
-  quantity: int
+  quantity: isize
 }
 
 impl QuantityComponent {
-  pub fn new(eid: String, n: int) -> QuantityComponent {
+  pub fn new(eid: String, n: isize) -> QuantityComponent {
     QuantityComponent {
       eid: eid,
       quantity: n
